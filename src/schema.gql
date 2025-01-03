@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Client {
+  id: Int!
+  fname: String!
+  lname: String!
+}
+
+type Query {
+  sayHello: String!
+  client(id: Int!): Client!
+}
+
+type Mutation {
+  createUser(name: String!): String!
+  updateClient(updateClientInput: UpdateClientInput!): Client!
+  removeClient(id: Int!): Client!
+}
+
+input UpdateClientInput {
+  id: Int!
+  fname: String
+  lname: String
+}
