@@ -43,4 +43,5 @@ export class UsersController {
   getUserProfile(@Param('id') id: string) {
     return { message: `User Profile: ${id}` };
   }
+  
 }

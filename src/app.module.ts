@@ -14,6 +14,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { AppResolver } from './app.resolver';
 import { ClientModule } from './client/client.module';
+import { SampleModule } from './sample/sample.module';
 
 
 
@@ -27,14 +28,15 @@ import { ClientModule } from './client/client.module';
       ttl: 300, // Time-to-live in seconds (5 minutes)
     }),
     UsersModule,
-    KeycloakModule,
+    // KeycloakModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // Auto-generate schema
       playground: true, // Disable deprecated GraphQL Playground
       // plugins: [require('@apollo/server-plugin-landing-page')], // Enable Apollo Explorer
     }),
-    ClientModule
+    ClientModule,
+    SampleModule
   ],
   providers: [
     // {

@@ -4,7 +4,8 @@ import { LazyModuleLoader } from '@nestjs/core';
 import { Cache } from 'cache-manager';
 import { LazyModule } from './lazy/lazy.module';
 import { LazyService } from './lazy/lazy.service';
-
+// 
+import moment from 'moment';
 @Injectable()
 export class AppService {
   private lazyService: LazyService; 
@@ -31,6 +32,26 @@ async findOne(): Promise<String> {
   // Safely call the addtask method
   return this.lazyService.addtask();
 }
+
+//  formatTo12Hour(): string {
+//   const time24= '23:53:17';
+//  const time12 = moment(time24.split(' ')[1], "HH:mm:ss").format("hh:mm A");
+// return time12;
+  // const [hours, minutes, seconds] = time24.split(':').map(Number);
+  // const period = hours >= 12 ? 'PM' : 'AM';
+  // const hours12 = hours % 12 || 12; 
+  // console.log("time changed ", `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`);
+  // return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
+
+// }
+formatTo12Hour(): void {
+  const time24 = '23:53:17';
+  const time12= console.log("time to change ",time24)
+  // const time12 = moment(time24, "HH:mm:ss").format("hh:mm A");
+  return time12;
+}
+
+
 
 
 // constructor(private readonly lazyModuleLoader: LazyModuleLoader) {}

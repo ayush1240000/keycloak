@@ -14,5 +14,12 @@ export class AppController {
   async triggerLazyLoading() {
     return await this.appService.findOne();
   }
+
+  @Get('/getchanged')
+  async changeformat(){
+    return await this.appService.formatTo12Hour();
+  }
+
+
   
 }
