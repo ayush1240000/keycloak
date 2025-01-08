@@ -20,6 +20,12 @@ export class AppController {
     return await this.appService.formatTo12Hour();
   }
 
+ @Get('/getchanged')
+  async changeformat1(){
+    const hello= console.log("hello")
+    return hello;
+  }
+  
 
   
 }
